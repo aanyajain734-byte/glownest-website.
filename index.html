@@ -1,0 +1,464 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GlowNest | Your Skin's Happy Place</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #493126;
+    background: #fffaf5;
+}
+
+header {
+    background: #f3e2d6;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: #70452f;
+}
+
+nav a {
+    text-decoration: none;
+    color: #493126;
+    margin-left: 25px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #b77c65;
+}
+
+.hero {
+    min-height: 570px;
+    padding: 70px 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    background: linear-gradient(120deg, #f5e2d5, #fff8f1);
+}
+
+.hero-text {
+    max-width: 550px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 6vw, 65px);
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    line-height: 1.9;
+    margin-bottom: 30px;
+    color: #765b4e;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 30px;
+    background: #70452f;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #a36d55;
+    transform: translateY(-3px);
+}
+
+.hero-art {
+    width: 310px;
+    height: 390px;
+    border-radius: 48% 48% 20px 20px;
+    background: radial-gradient(circle at 40% 30%, #fff7ef, #e4bda6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 20px 50px #70452f22;
+}
+
+.bottle {
+    width: 145px;
+    height: 230px;
+    border-radius: 18px 18px 28px 28px;
+    background: linear-gradient(90deg, #e8d5c4, #fff9f0, #d9bda8);
+    border: 2px solid #d3ad91;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 8px 12px 20px #70452f30;
+}
+
+.bottle:before {
+    content: "";
+    position: absolute;
+    top: -65px;
+    width: 45px;
+    height: 65px;
+    background: #fff8f0;
+    border: 2px solid #d3ad91;
+    border-radius: 18px 18px 5px 5px;
+}
+
+.bottle:after {
+    content: "";
+    position: absolute;
+    top: -90px;
+    width: 23px;
+    height: 28px;
+    background: #a87553;
+    border-radius: 5px 5px 0 0;
+}
+
+.bottle strong {
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+}
+
+.bottle small {
+    font-size: 9px;
+    letter-spacing: 2px;
+    margin-top: 8px;
+}
+
+section {
+    padding: 80px 9%;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #957b6c;
+    margin-bottom: 45px;
+}
+
+.about {
+    text-align: center;
+    line-height: 2;
+    max-width: 850px;
+    margin: auto;
+}
+
+.products {
+    background: #f7eae1;
+}
+
+.product-card {
+    max-width: 650px;
+    margin: auto;
+    padding: 35px;
+    background: #fffaf5;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px #70452f12;
+}
+
+.product-card .hero-art {
+    margin: 20px auto 35px;
+    width: 220px;
+    height: 250px;
+}
+
+.product-card .bottle {
+    transform: scale(.72);
+}
+
+.product-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.feature {
+    background: #f8eee7;
+    padding: 35px 20px;
+    border-radius: 18px;
+    text-align: center;
+}
+
+.feature span {
+    font-size: 35px;
+}
+
+.feature h3 {
+    font-family: 'Playfair Display', serif;
+    margin: 15px 0;
+}
+
+.feature p {
+    font-size: 13px;
+    line-height: 1.8;
+    color: #806a5c;
+}
+
+.steps {
+    max-width: 750px;
+    margin: auto;
+}
+
+.step {
+    padding: 22px;
+    margin-bottom: 15px;
+    border-left: 4px solid #b77c65;
+    background: #f8eee7;
+    border-radius: 8px;
+}
+
+.reviews {
+    background: #f7eae1;
+    text-align: center;
+}
+
+.review {
+    max-width: 650px;
+    margin: auto;
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-style: italic;
+    line-height: 1.7;
+}
+
+.contact {
+    text-align: center;
+}
+
+footer {
+    background: #70452f;
+    color: white;
+    padding: 35px 10%;
+    text-align: center;
+    line-height: 2;
+}
+
+footer a {
+    color: #f5d9c7;
+    text-decoration: none;
+}
+
+@media(max-width: 750px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    nav a {
+        margin: 0;
+        font-size: 12px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-art {
+        width: 250px;
+        height: 320px;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🌸 GlowNest</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#product">Product</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<div class="hero" id="home">
+    <div class="hero-text">
+        <h1>Your Skin's<br>Happy Place ✨</h1>
+        <p>
+            Welcome to GlowNest! Discover a skincare experience
+            that celebrates your natural beauty. Give your skin
+            the care and love it deserves.
+        </p>
+        <a href="#product" class="btn">Discover Our Serum</a>
+    </div>
+
+    <div class="hero-art">
+        <div class="bottle">
+            <strong>GlowNest</strong>
+            <small>SKINCARE SERUM</small>
+        </div>
+    </div>
+</div>
+
+<section id="about">
+    <h2 class="section-title">Welcome to GlowNest</h2>
+    <p class="subtitle">Nourish • Glow • Belong</p>
+    <p class="about">
+        GlowNest believes that beautiful skin begins with
+        self-care. Our brand is created to make skincare
+        simple, enjoyable and special. We want everyone
+        to feel confident and comfortable in their own skin.
+        Because your skin deserves a little extra love!
+    </p>
+</section>
+
+<section class="products" id="product">
+    <h2 class="section-title">Our Special Product</h2>
+    <p class="subtitle">A little drop of care, a whole lot of glow.</p>
+
+    <div class="product-card">
+        <div class="hero-art">
+            <div class="bottle">
+                <strong>GlowNest</strong>
+                <small>SKINCARE SERUM</small>
+            </div>
+        </div>
+
+        <h3>GlowNest Skincare Serum</h3>
+        <p>
+            Make your skincare routine a beautiful ritual.
+            Discover the GlowNest serum and give your skin
+            the care it deserves.
+        </p>
+        <br>
+        <a href="#contact" class="btn">Enquire Now</a>
+    </div>
+</section>
+
+<section id="benefits">
+    <h2 class="section-title">Why Choose GlowNest?</h2>
+    <p class="subtitle">Little steps towards a lovely skincare routine.</p>
+
+    <div class="features">
+        <div class="feature">
+            <span>💧</span>
+            <h3>Hydration</h3>
+            <p>Make hydration an important part of your skincare routine.</p>
+        </div>
+
+        <div class="feature">
+            <span>✨</span>
+            <h3>Natural Glow</h3>
+            <p>Celebrate your skin and its natural beauty.</p>
+        </div>
+
+        <div class="feature">
+            <span>🌸</span>
+            <h3>Self Care</h3>
+            <p>Turn everyday skincare into a moment of self-love.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2 class="section-title">Your Glow Routine</h2>
+    <p class="subtitle">Simple steps for your skincare ritual.</p>
+
+    <div class="steps">
+        <div class="step">
+            <h3>01. Cleanse</h3>
+            <p>Start with a gentle cleanser suitable for your skin.</p>
+        </div>
+
+        <div class="step">
+            <h3>02. Apply Serum</h3>
+            <p>Apply your GlowNest serum as directed on its label.</p>
+        </div>
+
+        <div class="step">
+            <h3>03. Moisturize</h3>
+            <p>Follow with a suitable moisturizer.</p>
+        </div>
+
+        <div class="step">
+            <h3>04. Protect</h3>
+            <p>Use sunscreen during the daytime.</p>
+        </div>
+    </div>
+</section>
+
+<section class="reviews">
+    <h2 class="section-title">A Little Love for GlowNest</h2>
+    <p class="subtitle">Our brand, your beauty journey.</p>
+    <p class="review">
+        "Because skincare is not just about looking beautiful,
+        it is about feeling beautiful too."
+    </p>
+    <br>
+    <strong>– The GlowNest Team</strong>
+</section>
+
+<section class="contact" id="contact">
+    <h2 class="section-title">Let's Stay Connected!</h2>
+    <p class="subtitle">
+        Have questions? We'd love to hear from you.
+    </p>
+    <a href="mailto:YOUR-EMAIL@example.com" class="btn">
+        Contact GlowNest
+    </a>
+</section>
+
+<footer>
+    <h2 style="font-family: 'Playfair Display', serif;">
+        🌸 GlowNest
+    </h2>
+    <p>Your Skin's Happy Place</p>
+    <p>Nourish • Glow • Belong</p>
+    <p>© 2026 GlowNest. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
